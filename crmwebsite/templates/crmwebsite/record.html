@@ -1,0 +1,56 @@
+{% extends 'crmwebsite/base.html' %}
+
+{% block content %}
+<h1>Customer record</h1>
+{{ user_record }}
+
+<div class="card">
+    <div class="card-header"><strong>
+          {{ user_record.first_name }} 
+          {{ user_record.last_name }}</strong>
+    </div>
+    <div class="card-body">
+  
+  
+  
+  <p class="card-text">
+  <strong>Email: </strong>{{ user_record.email }}</p>
+  
+  <p class="card-text">
+  <strong>Phone: </strong>{{ user_record.phone }}
+  </p>
+  
+  <p class="card-text">
+  <strong>Address: </strong>{{ user_record.address }}</p>
+  
+  <p class="card-text">
+  <strong>City: </strong>{{ user_record.city }}</p>
+  
+  <p class="card-text">
+  <strong>State: </strong>{{ user_record.state }}</p>
+  
+  <p class="card-text">
+  <strong>Pincode: </strong>{{ user_record.pincode }}</p>
+  
+  <p class="card-text">
+  <strong>Create At: </strong>{{ user_record.created_at }}</p>
+  
+  <p class="card-text">
+  <strong>ID: </strong>{{ user_record.id }}</p>
+      
+      
+    </div>
+  </div>
+  
+  <br/><br/>
+
+
+<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+
+<a href="{% url 'delete_record' user_record.id %}" class="btn btn-danger">Delete</a>
+<a href="{% url 'update_record' user_record.id %}" 
+class="btn btn-danger">Update Record</a>
+
+  
+
+{% endblock %}
